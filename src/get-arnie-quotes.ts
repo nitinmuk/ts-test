@@ -28,5 +28,5 @@ const mapResponse = (httpGetResponse: {status: number, body: string}): TResult =
 
 export const getArnieQuotes = async (urls : string[]) : Promise<TResult[]> => {
   const arnieQuoteResponses = await Promise.all(urls.map(url => httpGet(url)));
-  return arnieQuoteResponses.map(response => mapResponse(response));  
+  return arnieQuoteResponses.map(mapResponse);  
 };
